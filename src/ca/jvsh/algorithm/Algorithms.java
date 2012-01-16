@@ -17,6 +17,7 @@ public class Algorithms
 		System.out.println("2 - Insertion Sort (non decreasing)");
 		System.out.println("3 - Merge Sort");
 		System.out.println("4 - Bubble Sort");
+		System.out.println("5 - Divide and Conquer");
 		
 		int algorithm = 0;
 		try
@@ -45,6 +46,9 @@ public class Algorithms
 				break;
 			case 4:
 				new BubbleSort();
+				break;
+			case 5:
+				new DivideConquer();
 				break;
 			default:
 				System.out.println("No such algorithm");
