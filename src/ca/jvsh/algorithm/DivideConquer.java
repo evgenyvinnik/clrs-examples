@@ -13,7 +13,7 @@ public class DivideConquer
 		
 
 		System.out.println("Enter number of elements in the array");
-		int array_elements = 2;
+		int array_elements = 1;
 		try
 		{
 			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -24,14 +24,15 @@ public class DivideConquer
 			e.printStackTrace();
 		}
 
-		if (array_elements < 2)
+		if (array_elements < 1)
 		{
-			System.out.println("Number of elements in the array should be greater or equal 2");
+			System.out.println("Number of elements in the array should be greater or equal 1");
 		}
 		else
 		{
 			Random random = new Random();
 
+			//int[] A = new int[]{13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7};
 			int[] A = new int[array_elements];
 
 			for (int i = 0; i < A.length; i++)
@@ -57,8 +58,7 @@ public class DivideConquer
 	{
 		if( high == low)
 		{
-			int[] result = {low, high, A[low]}; //base case: only one element
-			return result;
+			return new int[] {low, high, A[low]}; //base case: only one element
 		}
 		else
 		{
@@ -92,7 +92,7 @@ public class DivideConquer
 		int max_left = -1;
 		int max_right = -1;
 		
-		for(int i = mid; i > low; i--)
+		for(int i = mid; i >= low; i--)
 		{
 			sum += A[i];
 			
@@ -107,19 +107,17 @@ public class DivideConquer
 		
 		sum = 0;
 		
-		for(int j = mid+1; j < high; j++)
+		for(int j = mid+1; j <= high; j++)
 		{
 			sum += A[j];
 			
 			if (sum > right_sum)
 			{
 				right_sum = sum;
-				max_left = j;
+				max_right = j;
 			}
 		}
 		
-		
-		int[] result =  {max_left, max_right, left_sum + right_sum};
-		return result;
+		return new int[]{max_left, max_right, left_sum + right_sum};
 	}
 }
