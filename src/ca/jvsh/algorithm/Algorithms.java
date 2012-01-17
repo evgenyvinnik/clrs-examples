@@ -18,6 +18,14 @@ public class Algorithms
 		System.out.println("3 - Merge Sort");
 		System.out.println("4 - Bubble Sort");
 		System.out.println("5 - Divide and Conquer");
+		System.out.println("6 - Square Matrix Multiplication");
+		System.out.println("7 - Square Matrix Multiplication (recursive version)");
+		System.out.println("8 - Heap Sort");
+		System.out.println("9 - Priority Queue");
+		System.out.println("10 - Quick Sort");
+		System.out.println("11 - Randomized Partition Quick Sort");
+		System.out.println("12 - Hoare Sort");
+		System.out.println("13 - Tail Recursive Quick Sort");
 		
 		int algorithm = 0;
 		try
@@ -27,7 +35,6 @@ public class Algorithms
 		}
 		catch (IOException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -49,6 +56,30 @@ public class Algorithms
 				break;
 			case 5:
 				new DivideConquer();
+				break;
+			case 6:
+				new SquareMatrixMultiplication();
+				break;
+			case 7:
+				System.out.println("Would be implemented in future.");
+				break;
+			case 8:
+				new HeapSort();
+				break;
+			case 9:
+				new PriorityQueue();
+				break;
+			case 10:
+				new QuickSort();
+				break;
+			case 11:
+				new RandomizedPartitionQuickSort();
+				break;
+			case 12:
+				new HoareSort();
+				break;
+			case 13:
+				new TailRecursiveQuickSort();
 				break;
 			default:
 				System.out.println("No such algorithm");
